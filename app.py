@@ -4,6 +4,7 @@ from routes.event_routes import event_bp
 
 app = Flask(__name__)
 
+# IMPORTANT: Render-safe DB path
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///instance/events.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -17,4 +18,4 @@ def home():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
