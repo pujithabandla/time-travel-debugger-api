@@ -1,11 +1,13 @@
 from flask import Flask
 from models.event import db
 from routes.event_routes import event_bp
+import os
 
 app = Flask(__name__)
 
-# IMPORTANT: Render-safe DB path
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///events.db"
+# ✅ FIXED DB PATH FOR RENDER
+DB_PATH = os.path.join("/tmp", "events.db")
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_PATH}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
