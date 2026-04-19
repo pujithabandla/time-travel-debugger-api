@@ -89,6 +89,3 @@ Migrate to scalable databases such as PostgreSQL
 Conclusion
 
 This project represents a shift from simple application development to system-oriented thinking. It focuses on solving a real engineering problem and demonstrates the ability to design, build, and deploy meaningful backend systems.
-
-
-I’ll:
